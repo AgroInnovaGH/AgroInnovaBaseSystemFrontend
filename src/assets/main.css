@@ -1,3 +1,24 @@
-@import "tailwindcss";
-@import 'primeicons/primeicons.css'
+@import 'tailwindcss';
 
+::before,
+::after {
+  content: '';
+  position: absolute;
+}
+
+body {
+  background-color: white;
+}
+
+h2 {
+  line-height: 1;
+}
+
+p {
+  line-height: 1.2;
+}
+
+input {
+  outline: 1px ridge rgba(0 0 0 / 0.1);
+  color: black;
+}

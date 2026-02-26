@@ -1,0 +1,129 @@
+import type { Component } from 'vue'
+import {
+  IconShareplay,
+  IconFileDescription,
+  IconGitPullRequestClosed,
+  IconTruckDelivery,
+  IconShovel,
+  IconBlender,
+  IconPlant2,
+  IconBuildingWarehouse,
+  IconMessage2,
+  IconUsers,
+  IconSettings,
+  IconHelp,
+} from '@tabler/icons-vue'
+
+type Children = {
+  label: string
+  to: string
+}
+
+export type NavItem = {
+  id: string
+  label: string
+  to?: string
+  icon: Component
+  children?: Children[]
+}
+
+export const menuItems: NavItem[] = [
+  {
+    id: 'dashboard',
+    label: 'Dashboard',
+    icon: IconShareplay,
+    children: [
+      { label: 'CRM', to: '/dashboard/crm' },
+      { label: 'Analytics', to: '/dashboard/analytics' },
+    ],
+  },
+
+  {
+    id: 'reports',
+    label: 'Reports',
+    icon: IconFileDescription,
+    children: [
+      { label: 'Sales', to: '/reports/sales' },
+      { label: 'Marketing', to: '/reports/marketing' },
+      { label: 'Operations', to: '/reports/operations' },
+    ],
+  },
+
+  {
+    id: 'request',
+    label: 'Request',
+    icon: IconGitPullRequestClosed,
+    children: [
+      { label: 'Buying', to: '/request/buying' },
+      { label: 'Selling', to: '/request/selling' },
+      { label: 'Akoko Sika', to: '/request/akoko-sika' },
+      { label: 'Inputs', to: '/request/inputs' },
+    ],
+  },
+
+  {
+    id: 'deliveries',
+    label: 'Deliveries',
+    to: '/deliveries',
+    icon: IconTruckDelivery,
+  },
+
+  {
+    id: 'farms',
+    label: 'Farms',
+    to: '/farm',
+    icon: IconPlant2,
+  },
+  {
+    id: 'processing',
+    label: 'Processing',
+    to: '/processing',
+    icon: IconBlender,
+  },
+
+  {
+    id: 'storage',
+    label: 'Storage',
+    to: '/storage',
+    icon: IconBuildingWarehouse,
+    children: [
+      { label: 'Chicken', to: '/storage/chicken' },
+      { label: 'Eggs', to: '/storage/eggs' },
+      { label: 'Maize', to: '/storage/eggs' },
+      { label: 'Soyabeans', to: '/storage/eggs' },
+    ],
+  },
+
+  {
+    id: 'Messaging',
+    label: 'Messaging',
+    to: '/messaging',
+    icon: IconMessage2,
+  },
+
+  {
+    id: 'services',
+    label: 'Services',
+    to: '/servicing',
+    icon: IconShovel,
+  },
+  {
+    id: 'users',
+    label: 'Users',
+    to: '/users',
+    icon: IconUsers,
+  },
+
+  {
+    id: 'settings',
+    label: 'Settings',
+    to: '/settings',
+    icon: IconSettings,
+  },
+  {
+    id: 'help',
+    label: 'Help center',
+    to: '/help',
+    icon: IconHelp,
+  },
+]

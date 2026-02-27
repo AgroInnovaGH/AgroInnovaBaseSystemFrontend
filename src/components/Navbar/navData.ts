@@ -2,11 +2,11 @@ import type { Component } from 'vue'
 import {
   IconShareplay,
   IconFileDescription,
-  IconGitPullRequestClosed,
+  IconSend,
   IconTruckDelivery,
-  IconShovel,
-  IconBlender,
-  IconPlant2,
+  IconWorld,
+  IconRecycle,
+  IconTractor,
   IconBuildingWarehouse,
   IconMessage2,
   IconUsers,
@@ -52,7 +52,7 @@ export const menuItems: NavItem[] = [
   {
     id: 'request',
     label: 'Request',
-    icon: IconGitPullRequestClosed,
+    icon: IconSend,
     children: [
       { label: 'Buying', to: '/request/buying' },
       { label: 'Selling', to: '/request/selling' },
@@ -72,13 +72,13 @@ export const menuItems: NavItem[] = [
     id: 'farms',
     label: 'Farms',
     to: '/farm',
-    icon: IconPlant2,
+    icon: IconTractor,
   },
   {
     id: 'processing',
     label: 'Processing',
     to: '/processing',
-    icon: IconBlender,
+    icon: IconRecycle,
   },
 
   {
@@ -105,7 +105,7 @@ export const menuItems: NavItem[] = [
     id: 'services',
     label: 'Services',
     to: '/servicing',
-    icon: IconShovel,
+    icon: IconWorld,
   },
   {
     id: 'users',

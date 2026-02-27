@@ -1,28 +1,7 @@
 <template>
-  <nav class="fixed h-20 top-0 left-0 right-0 z-50 border-b border-slate-200 bg-white">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <nav class="fixed h-20 top-0 left-0 right-0 border-b border-slate-200 bg-white">
+    <div class="px-4 sm:px-6 lg:px-8">
       <div class="flex h-20 items-center">
-        <!-- Div 1: Logo + Mobile Hamburger -->
-        <div class="flex items-center gap-4 lg:gap-8 head w-80 h-20">
-          <a href="/" class="text-xl md:text-2xl font-bold tracking-tight text-green-400">
-            AkokoMarket
-          </a>
-          <button
-            class="md:hidden text-gray-300 hover:text-white focus:outline-none"
-            @click="mobileOpen = !mobileOpen"
-            aria-label="Toggle menu"
-          >
-            <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
-        </div>
-
         <!-- Div 2: + button + Right icons with hover dropdowns -->
         <div class="hidden md:flex items-center gap-6 justify-between w-full h-20 px-4">
           <!-- Div 2a: + Circle Button -->
@@ -46,7 +25,7 @@
               class="flex items-center justify-between px-5 py-2 text-gray-300 hover:bg-slate-200 transition"
             >
               <div class="flex items-center gap-4 text-black">
-                <IconDeviceDesktopAnalytics class="text-gray-400" />
+                <IconShareplay class="text-gray-400" />
                 Dashboard
               </div>
               <span class="text-gray-500 text-sm">></span>
@@ -76,7 +55,7 @@
                @mouseleave="startHideReports()">
             <a href="#" class="flex items-center justify-between px-5 py-2 text-gray-300 hover:bg-slate-200 transition">
               <div class="flex items-center gap-4 text-black">
-                <IconCast class="text-gray-400" />
+                <IconFileDescription class="text-gray-400" />
                 Reports
               </div>
               <span class="text-gray-500 text-sm">></span>
@@ -160,7 +139,7 @@
                      @mouseleave="startHideStorage()">
                   <a href="#" class="flex items-center justify-between px-5 py-2 text-gray-300 hover:bg-slate-200 transition">
                     <div class="flex items-center gap-4 text-black">
-                      <IconHomeShield class="text-gray-400" />
+                      <IconBuildingWarehouse class="text-gray-400" />
                       Storage
                     </div>
                     <span class="text-gray-500 text-sm">></span>
@@ -183,7 +162,7 @@
 
                 <a href="#" class="flex items-center justify-between px-5 py-2 text-gray-300 hover:bg-slate-200 transition">
                   <div class="flex items-center gap-4 text-black">
-                    <IconMessageChatbot class="text-gray-400" />
+                    <IconMessage2 class="text-gray-400" />
                     Messaging
                   </div>
                   <span class="text-gray-500 text-sm"></span>
@@ -215,7 +194,7 @@
 
                 <a href="#" class="flex items-center justify-between px-5 py-2 text-gray-300 hover:bg-slate-200 transition">
                   <div class="flex items-center gap-4 text-black">
-                    <IconHeadset class="text-gray-400" />
+                    <IconHelp class="text-gray-400" />
                     Help Center
                   </div>
                   <span class="text-gray-500 text-sm"></span>
@@ -329,30 +308,6 @@
                   </button>
                   <!-- add more languages -->
                 </div>
-              </div>
-            </div>
-
-            <!-- Timesheets Dropdown -->
-            <div class="relative group hover:bg-green-200 w-7 h-7 flex items-center justify-center rounded-full transition">
-              <button class="text-gray-300 hover:text-white transition" aria-label="Timesheets">
-                <svg class="h-6 w-6 text-gray-500 hover:text-green-600 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span class="absolute -top-1 -right-1 h-4 w-4 flex items-center justify-center rounded-full bg-green-500 text-[10px] font-bold text-white">3</span>
-              </button>
-              <div class="absolute right-0 top-full mt-3 w-96 bg-white border border-slate-200 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform scale-95 group-hover:scale-100 origin-top-right p-5 text-center">
-                <div class="border-b border-slate-200 flex items-center justify-between">
-                  <h3 class="text-lg font-semibold text-black mb-1">Timesheets</h3>
-                  <p class="text-sm text-green-400 mb-4">3 Upcoming</p>
-                </div>
-                <svg class="h-16 w-16 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <p class="text-gray-400 mb-6">No started timers found yet!</p>
-                <button class="bg-blue-600 text-white text-xs font-semibold px-3 py-2 rounded-lg hover:bg-blue-400 transition border-b border-slate-800">
-                  STARTED TIMER
-                </button>
-                <p class="mt-6 text-sm text-gray-500">All Timesheets</p>
               </div>
             </div>
 
@@ -497,18 +452,18 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { IconDeviceDesktopAnalytics } from '@tabler/icons-vue';
-import { IconCast } from '@tabler/icons-vue';
+import { IconShareplay } from '@tabler/icons-vue';
+import { IconFileDescription } from '@tabler/icons-vue';
 import { IconSend } from '@tabler/icons-vue';
 import { IconTruckDelivery } from '@tabler/icons-vue';
 import { IconTractor } from '@tabler/icons-vue';
 import { IconRecycle } from '@tabler/icons-vue';
-import { IconHomeShield } from '@tabler/icons-vue';
-import { IconMessageChatbot } from '@tabler/icons-vue';
+import { IconBuildingWarehouse} from '@tabler/icons-vue';
+import { IconMessage2 } from '@tabler/icons-vue';
 import { IconWorld } from '@tabler/icons-vue';
 import { IconUsers } from '@tabler/icons-vue';
 import { IconSettings } from '@tabler/icons-vue';
-import { IconHeadset } from '@tabler/icons-vue';
+import { IconHelp } from '@tabler/icons-vue';
 import { IconUser } from '@tabler/icons-vue';
 import { IconUserCircle } from '@tabler/icons-vue';
 import { IconPointFilled } from '@tabler/icons-vue';

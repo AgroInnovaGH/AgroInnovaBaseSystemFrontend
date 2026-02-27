@@ -8,9 +8,9 @@ const { navIsExpanded } = storeToRefs(store)
 </script>
 <template>
   <div class="sidebar-header">
-    <figure class="cursor-pointer" @click="router.push('/')">
-      <img v-if="navIsExpanded" src="../../assets/akokoLogo.png" alt="" />
-      <img v-if="!navIsExpanded" src="../../assets/akokomarket.png" class="w-2.5" alt="" />
+    <figure class="cursor-pointer" @click="router.push('/admin')">
+      <img v-if="!navIsExpanded" src="../../assets/akokoLogo.png" alt="" />
+      <img v-if="navIsExpanded" src="../../assets/akokomarket.png" class="w-2.5" alt="" />
     </figure>
   </div>
 </template>

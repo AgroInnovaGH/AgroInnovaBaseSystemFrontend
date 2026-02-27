@@ -6,12 +6,21 @@
   position: absolute;
 }
 
+:root {
+  --alt-primary-color: #f3f4f6;
+  --accent-color: #016630;
+}
+
 body {
   background-color: white;
 }
 
 h2 {
   line-height: 1;
+}
+
+button {
+  border: none;
 }
 
 p {
@@ -21,4 +30,8 @@ p {
 input {
   outline: 1px ridge rgba(0 0 0 / 0.1);
   color: black;
+}
+
+a {
+  text-decoration: none;
 }

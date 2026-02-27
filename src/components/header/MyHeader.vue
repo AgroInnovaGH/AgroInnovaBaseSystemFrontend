@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed h-20 top-0 left-0 right-0 z-50 bg-[#0f172a] border-b border-slate-200 bg-white">
+  <nav class="fixed h-20 top-0 left-0 right-0 z-50 border-b border-slate-200 bg-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-20 items-center">
         <!-- Div 1: Logo + Mobile Hamburger -->
@@ -349,7 +349,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <p class="text-gray-400 mb-6">No started timers found yet!</p>
-                <button class="bg-blue-600 text-white text-xs font-semibold px-3 py-2 rounded-lg hover:bg-blue-400 transition hover:bg-slate-400 transition border-b border-slate-800">
+                <button class="bg-blue-600 text-white text-xs font-semibold px-3 py-2 rounded-lg hover:bg-blue-400 transition border-b border-slate-800">
                   STARTED TIMER
                 </button>
                 <p class="mt-6 text-sm text-gray-500">All Timesheets</p>
@@ -414,7 +414,7 @@
                 <div class="p-5 border-b border-slate-200 flex items-center gap-4">
                   <div class="relative">
                     <IconUserCircle class="h-12 w-12 rounded-full object-cover" />
-                    <span class="absolute bottom-0 right-0 h-4 w-4 bg-green-500 rounded-full border-1 border-[#0f172a]"></span>
+                    <span class="absolute bottom-0 right-0 h-4 w-4 bg-green-500 rounded-full border border-[#0f172a]"></span>
                   </div>
                   <div>
                     <p class="text-black font-semibold flex items-center gap-2">

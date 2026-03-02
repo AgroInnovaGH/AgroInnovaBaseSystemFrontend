@@ -42,15 +42,15 @@
                 class="absolute left-0 top-full mt-3 w-60 bg-white border border-slate-200 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform scale-95 group-hover:scale-100 origin-top-left"
               >
                 <div class="py-1">
-                  <div
+                  <!-- <div
                     class="relative"
                     @mouseenter="
                       cancelHideDashboard();
                       showDashboard = true;
                     "
                     @mouseleave="startHideDashboard()"
-                  >
-                    <a
+                  > -->
+                    <!-- <a
                       href="#"
                       class="flex items-center justify-between px-5 py-2 text-gray-300 hover:bg-slate-200 transition"
                     >
@@ -59,9 +59,9 @@
                         Dashboard
                       </div>
                       <span class="text-gray-500 text-sm">></span>
-                    </a>
+                    </a> -->
                     <!-- Dashboard-specific dropdown (only on hover of Dashboard or its menu) -->
-                    <div
+                    <!-- <div
                       class="absolute left-60 top-5 mt-1 w-48 bg-white border border-slate-200 rounded-xl shadow-2xl transition-all duration-200 transform origin-top-left z-10"
                       v-show="showDashboard"
                       @mouseenter="
@@ -84,8 +84,8 @@
                           Analytics
                         </a>
                       </div>
-                    </div>
-                  </div>
+                    </div> -->
+                  <!-- </div> -->
                   <!-- Other menu items (Request, Deliveries, Farms, etc.) -->
                   <div
                     class="relative"
@@ -302,7 +302,7 @@
                     </div>
                     <span class="text-gray-500 text-sm"></span>
                   </a>
-                  <a
+                  <!-- <a
                     href="#"
                     class="flex items-center justify-between px-5 py-2 text-gray-300 hover:bg-slate-200 transition"
                   >
@@ -321,12 +321,12 @@
                       Help Center
                     </div>
                     <span class="text-gray-500 text-sm"></span>
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>
             <!-- Div 2b: Right icons with hover dropdowns -->
-            <div class="hidden md:flex items-center gap-4 lg:gap-5 w-90 h-20 justify-between p-4">
+            <div class="hidden md:flex items-center gap-4 lg:gap-5 w-80 h-20 justify-between p-4">
               <!-- Search Dropdown -->
               <div
                 class="relative group hover:bg-green-200 w-9 h-9 flex items-center justify-center rounded-full transition"
@@ -411,7 +411,7 @@
               <div
                 class="relative group hover:bg-green-200 w-9 h-9 flex items-center justify-center rounded-full transition"
               >
-                <button class="text-xl leading-none" aria-label="Language">🇺🇸</button>
+                <button class="text-xl leading-none" aria-label="Language">🇬🇭</button>
                 <div
                   class="absolute right-0 top-full mt-3 w-96 bg-white border border-slate-200 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform scale-95 group-hover:scale-100 origin-top-right"
                 >

@@ -11,7 +11,7 @@ const { navIsExpanded, showHoverSideBar } = storeToRefs(store);
 
 <template>
   <aside
-    :class="` ${navIsExpanded ? 'expanded' : ''} sidebar border-r border-r-gray-200  overflow-x-hidden overflow-y-scroll `"
+    :class="` ${navIsExpanded ? 'expanded' : ''} sidebar border-r border-r-gray-200  overflow-x-hidden overflow-y-scroll h-dvh`"
   >
     <!-- for large screen only -->
     <ListItems :class_name="`hover_side_nav ${showHoverSideBar ? 'visible' : ''}`" />

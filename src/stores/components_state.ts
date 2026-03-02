@@ -4,6 +4,7 @@ export const useComponentsState = defineStore('components', {
   state: () => ({
     navIsExpanded: true,
     showHoverSideBar: false,
+    loading: false,
   }),
 
   actions: {

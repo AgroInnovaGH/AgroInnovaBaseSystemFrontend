@@ -1,5 +1,5 @@
 <template>
-  <div class="flex min-h-screen">
+  <div class="min-h-screen">
     <Header />
     <Navbar />
 
@@ -12,6 +12,6 @@
 </template>
 
 <script setup lang="ts">
-import Navbar from "@/components/Navbar/NavigationBar.vue";
-import Header from "@/components/header/Header.vue";
+import Navbar from '@/components/Navbar/NavigationBar.vue';
+import Header from '@/components/header/Header.vue';
 </script>

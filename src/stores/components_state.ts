@@ -1,13 +1,18 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
 
 export const useComponentsState = defineStore('components', {
   state: () => ({
-    navIsExpanded: false,
+    navIsExpanded: true,
+    showHoverSideBar: false,
   }),
 
   actions: {
     toggleNavbar(payload: boolean) {
-      this.navIsExpanded = payload
+      this.navIsExpanded = payload;
+    },
+
+    toggleHoverNavbarState(payload: boolean) {
+      this.showHoverSideBar = payload;
     },
   },
-})
+});

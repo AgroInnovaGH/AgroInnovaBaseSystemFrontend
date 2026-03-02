@@ -1,28 +1,21 @@
 <script setup lang="ts">
-import { useComponentsState } from '@/stores/components_state'
-import ListItems from './ListItems.vue'
-import { storeToRefs } from 'pinia'
-import { ref } from 'vue'
-import NavHeader from './NavHeader.vue'
+import { useComponentsState } from '@/stores/components_state';
+import ListItems from './ListItems.vue';
+import { storeToRefs } from 'pinia';
+import NavHeader from './NavHeader.vue';
 
-const store = useComponentsState()
-const { toggleNavbar } = store
-const { navIsExpanded } = storeToRefs(store)
-
-const showHoverSideBar = ref(false)
+const store = useComponentsState();
+const { toggleNavbar } = store;
+const { navIsExpanded, showHoverSideBar } = storeToRefs(store);
 </script>
 
 <template>
   <aside
-    class="sidebar"
-    @mouseover="!navIsExpanded ? (showHoverSideBar = true) : null"
-    @mouseleave="showHoverSideBar = false"
+    :class="` ${navIsExpanded ? 'expanded' : ''} sidebar border-r border-r-gray-200  overflow-x-hidden overflow-y-scroll `"
   >
-    <NavHeader />
-
     <!-- for large screen only -->
-    <ListItems :class="`hover_side_nav ${showHoverSideBar ? 'active' : ''}`" />
-    <ListItems />
+    <ListItems :class_name="`hover_side_nav ${showHoverSideBar ? 'visible' : ''}`" />
+    <ListItems class_name="default_sidebar" />
   </aside>
   <!-- for mobile screena only -->
   <div :class="`mobile_screen_sidebar ${navIsExpanded ? 'expanded' : ''}`">
@@ -36,15 +29,33 @@ const showHoverSideBar = ref(false)
 
 <style scoped>
 .sidebar {
-  --shadow-width: 0.2;
-  height: 100vh;
-  overflow-y: scroll;
-  overflow-x: hidden;
   scrollbar-width: none;
-  box-shadow: 0px 4px 4px rgba(0 0 0 / var(--shadow-width));
+  max-height: calc(100vh - var(--header-height));
+  width: 80px;
+  transition: width 200ms ease-in-out;
+
+  &.expanded {
+    width: 20%;
+  }
 
   @media (width < 992px) {
     display: none;
+  }
+}
+
+.expanded_listitems {
+  @media (width > 992px) {
+    width: 80px;
+    overflow-x: hidden;
+    transition: width 200ms ease-in-out;
+
+    &.expanded {
+      width: 20%;
+    }
+
+    &.shrink {
+      width: 80px;
+    }
   }
 }
 
@@ -72,7 +83,7 @@ const showHoverSideBar = ref(false)
     }
 
     .mobile_nav_listItems {
-      height: 100vh;
+      min-height: 100vh;
       padding-top: 1rem;
       box-shadow: 0px 4px 4px rgba(0 0 0 / 0.4);
     }
@@ -80,20 +91,22 @@ const showHoverSideBar = ref(false)
 }
 /* for large screens only  */
 .hover_side_nav {
-  position: fixed;
-  translate: var(--slide_to_view, -100%) 0;
-  left: 0;
-  width: 300px;
-  top: 90px;
-  overflow-y: scroll;
-  height: 100vh;
-  background-color: white;
-  transition: translate 500ms;
-  box-shadow: 0px 4px 4px rgba(0 0 0 / var(--shadow-width));
+  @media (width > 992px) {
+    position: fixed;
+    translate: var(--slide_to_view, -100%) 0;
+    width: 300px;
+    left: 0;
+    top: var(--header-height);
+    overflow-y: scroll;
+    height: 100vh;
+    transition: 500ms;
+    scrollbar-width: none;
+    border-right: 1px solid rgba(0 0 0 / 0.1);
+    background-color: white;
 
-  &.active {
-    --slide_to_view: 0;
-    display: block;
+    &.visible {
+      --slide_to_view: 0;
+    }
   }
 }
 </style>

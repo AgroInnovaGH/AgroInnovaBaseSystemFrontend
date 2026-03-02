@@ -1,4 +1,4 @@
-import type { Component } from 'vue'
+import type { Component } from 'vue';
 import {
   IconShareplay,
   IconFileDescription,
@@ -12,21 +12,20 @@ import {
   IconUsers,
   IconSettings,
   IconHelp,
-} from '@tabler/icons-vue'
+} from '@tabler/icons-vue';
 
 type Children = {
-  id? : string
-  label: string
-  to: string
-}
+  label: string;
+  to: string;
+};
 
 export type NavItem = {
-  id: string
-  label: string
-  to?: string
-  icon: Component
-  children?: Children[]
-}
+  id: string;
+  label: string;
+  to?: string;
+  icon: Component;
+  children?: Children[];
+};
 
 export const menuItems: NavItem[] = [
   {
@@ -127,4 +126,4 @@ export const menuItems: NavItem[] = [
     to: '/help',
     icon: IconHelp,
   },
-]
+];

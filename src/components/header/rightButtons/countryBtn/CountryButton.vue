@@ -19,7 +19,7 @@ import CountryBtnItems from './CountryBtnItems.vue'
     <!-- Dropdown content – appears on hover -->
     <div class="
       absolute right-0 top-full mt-2
-      w-[420px] bg-white border border-gray-300 rounded-2xl
+      w-105 bg-white border border-gray-300 rounded-2xl
       shadow-2xl overflow-hidden
       opacity-0 invisible pointer-events-none
       group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto

@@ -120,20 +120,7 @@ export const headerData: HeaderData[] = [
     label: 'Users',
     icon: IconUsers,
     to: '',
-  },
-  {
-    id: 10,
-    label: 'Settings',
-    icon: IconSettings,
-    to: '',
-  },
-  {
-    id: 11,
-    label: 'Help Center',
-    icon: IconHelp,
-    to: '',
-  },
-
+  }
 ]
 
   

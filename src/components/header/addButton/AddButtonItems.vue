@@ -17,10 +17,10 @@ const { label, icon, children } = item.value
       class="flex w-full items-center justify-between px-5 py-2 text-gray-300 hover:bg-slate-200 transition"
     >
       <div class="flex items-center gap-4 text-black">
-        <component :is="icon" class="text-green-700" />
+        <component :is="icon" class="text-green-800" />
         {{ label }}
       </div>
-      <span v-if="item.children" class="text-gray-500 text-sm">></span>
+      <span v-if="item.children" class="arrow">▼</span>
     </a>
     <!-- Storage dropdown -->
 
@@ -53,5 +53,16 @@ const { label, icon, children } = item.value
   display: none;
   border: 1px solid #c5bfbfab;
   border-radius: 15px;
+}
+
+.dropdown_parent .arrow {
+  margin-left: auto;
+  font-size: 0.5rem;
+  transition: transform 0.25s ease;
+  color: var(--accent-color);
+}
+
+.dropdown_parent:hover .arrow {
+  transform: rotate(-90deg);
 }
 </style>

@@ -1,4 +1,4 @@
-import { IconCurrencyDollar, IconLogout2, IconPointFilled, IconSettings, IconUserFilled } from '@tabler/icons-vue';
+import { IconBolt, IconCurrencyDollar, IconLogout2, IconPointFilled, IconSettings, IconUserFilled } from '@tabler/icons-vue';
 import type { Component } from "vue"
 
 type Children = {
@@ -83,7 +83,7 @@ export const userData: UserData[] = [
   {
     id: 4,
     label: 'Activity Feeds',
-    icon: IconUserFilled,
+    icon: IconBolt,
     to: '',
   },
   {

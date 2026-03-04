@@ -4,28 +4,31 @@
     :class="` bg-white nav_and_header_wrapper border-b border-b-gray-200 sticky top-0 left-0 z-50 w-full h-(--header-height) ${navIsExpanded ? 'expanded' : ''}`"
   >
     <NavHeader />
-    <nav>
+    <nav class="header">
       <div class="px-4 sm:px-6 lg:px-8">
         <div class="flex h-20 items-center">
+          <!-- button for showing large screen nav bar -->
           <button
-            class="cursor-pointer p-1 rounded-full hover:bg-gray-100 transition-colors duration-200"
-            v-if="navIsExpanded"
-            @click="toggleNavbar(false)"
+            class="cursor-pointer p-1 rounded-full hover:bg-gray-100 transition-colors duration-200 max-[992px]:hidden"
           >
-            <IconMenu2 size="35" />
+            <IconMenu2 v-if="navIsExpanded" size="35" @click="toggleNavbar(false)" />
+            <IconArrowNarrowRight v-if="!navIsExpanded" size="35" @click="toggleNavbar(true)" />
           </button>
+
+          <!-- button for showing mobile nav bar-->
           <button
-            class="cursor-pointer rounded-full p-1 hover:bg-gray-100 transition-colors duration-200"
-            v-if="!navIsExpanded"
-            @click="toggleNavbar(true)"
+            class="cursor-pointer p-1 rounded-full hover:bg-gray-100 transition-colors duration-200 min-[992px]:hidden"
           >
-            <IconArrowNarrowRight size="35" />
+            <IconMenu2 v-if="!mobileNavbarIsExpanded" @click="toggleMobileNavbar(true)" size="30" />
+
+            <IconX v-if="mobileNavbarIsExpanded" @click="toggleMobileNavbar(false)" size="30" />
           </button>
+
           <!-- Div 2: + button + Right icons with hover dropdowns -->
           <div class="hidden md:flex items-center gap-6 justify-between w-full h-20 px-4">
-           <AddButton />
+            <AddButton />
             <!-- Div 2b: Right icons with hover dropdowns -->
-            <div class="hidden md:flex items-center gap-4 lg:gap-5 w-80 h-20 justify-between p-4">
+            <div class="hidden md:flex items-center gap-4 lg:gap-5 w-90 h-20 justify-between p-4">
               <!-- Search Dropdown -->
               <SearchButton />
               <!-- Language Dropdown -->
@@ -55,7 +58,7 @@
 import { ref } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useComponentsState } from '@/stores/components_state';
-import { IconArrowNarrowRight, IconMenu2, IconShareplay } from '@tabler/icons-vue';
+import { IconArrowNarrowRight, IconMenu2, IconX } from '@tabler/icons-vue';
 import NavHeader from '../Navbar/NavHeader.vue';
 import AddButton from './addButton/AddButton.vue';
 import SearchButton from './rightButtons/SearchButton.vue';
@@ -64,8 +67,8 @@ import NotificationBtn from './rightButtons/NotificationBtn.vue';
 import UserButton from './rightButtons/userBtn/UserButton.vue';
 
 const store = useComponentsState();
-const { toggleNavbar } = store;
-const { navIsExpanded } = storeToRefs(store);
+const { toggleNavbar, toggleMobileNavbar } = store;
+const { navIsExpanded, mobileNavbarIsExpanded } = storeToRefs(store);
 
 const mobileOpen = ref(false);
 </script>

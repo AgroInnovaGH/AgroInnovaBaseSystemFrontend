@@ -5,6 +5,7 @@ export const useComponentsState = defineStore('components', {
     navIsExpanded: true,
     showHoverSideBar: false,
     loading: false,
+    mobileNavbarIsExpanded: false,
   }),
 
   actions: {
@@ -14,6 +15,10 @@ export const useComponentsState = defineStore('components', {
 
     toggleHoverNavbarState(payload: boolean) {
       this.showHoverSideBar = payload;
+    },
+
+    toggleMobileNavbar(payload: boolean) {
+      this.mobileNavbarIsExpanded = payload;
     },
   },
 });

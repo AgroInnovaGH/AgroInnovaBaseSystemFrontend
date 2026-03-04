@@ -1,9 +1,8 @@
-import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
 
-import AdminLayout from '@/layout/AdminLayout.vue'
-import LoginView from '@/views/login/LoginView.vue'
-import RegisterView from '@/views/register/RegisterView.vue'
-// import NavView from '@/views/navView.vue'
+import AdminLayout from '@/layout/AdminLayout.vue';
+import LoginView from '@/views/login/LoginView.vue';
+import RegisterView from '@/views/register/RegisterView.vue';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -21,14 +20,13 @@ const routes: RouteRecordRaw[] = [
     component: AdminLayout,
     children: [
       // Add child routes here
-    ]
-  }
-  ];
-
+    ],
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

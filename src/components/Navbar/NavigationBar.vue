@@ -2,11 +2,11 @@
 import { useComponentsState } from '@/stores/components_state';
 import ListItems from './ListItems.vue';
 import { storeToRefs } from 'pinia';
-import NavHeader from './NavHeader.vue';
+// import NavHeader from './NavHeader.vue';
 
 const store = useComponentsState();
-const { toggleNavbar } = store;
-const { navIsExpanded, showHoverSideBar } = storeToRefs(store);
+const { toggleMobileNavbar } = store;
+const { navIsExpanded, showHoverSideBar, mobileNavbarIsExpanded } = storeToRefs(store);
 </script>
 
 <template>
@@ -17,12 +17,15 @@ const { navIsExpanded, showHoverSideBar } = storeToRefs(store);
     <ListItems :class_name="`hover_side_nav ${showHoverSideBar ? 'visible' : ''}`" />
     <ListItems class_name="default_sidebar" />
   </aside>
-  <!-- for mobile screena only -->
-  <div :class="`mobile_screen_sidebar ${navIsExpanded ? 'expanded' : ''}`">
-    <NavHeader @click="toggleNavbar(false)" class="mobile_nav_header" />
+  <!-- for mobile screena only  , and  on mobile screen the nav is collpased  -->
+  <div :class="`mobile_screen_sidebar ${mobileNavbarIsExpanded ? 'expanded' : ''}`">
+    <!-- <NavHeader @click="toggleMobileNavbar(false)" class="mobile_nav_header" /> -->
     <div class="mobile_nav_listitems_wrapper">
       <ListItems class="mobile_nav_listItems" />
-      <div class="space_to_close_sidebar bg-black opacity-10" @click="toggleNavbar(false)"></div>
+      <div
+        class="space_to_close_sidebar bg-black opacity-10"
+        @click="toggleMobileNavbar(false)"
+      ></div>
     </div>
   </div>
 </template>
@@ -32,6 +35,7 @@ const { navIsExpanded, showHoverSideBar } = storeToRefs(store);
   scrollbar-width: none;
   max-height: calc(100vh - var(--header-height));
   width: 80px;
+  position: fixed;
   transition: width 200ms ease-in-out;
 
   &.expanded {
@@ -72,6 +76,8 @@ const { navIsExpanded, showHoverSideBar } = storeToRefs(store);
     scrollbar-width: none;
     translate: -100% 0;
     transition: translate 200ms;
+    z-index: 100;
+    background-color: white;
 
     &.expanded {
       translate: 0 0;

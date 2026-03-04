@@ -1,8 +1,8 @@
 export type CountryData = {
-  id: number,
-  label: string,
-  to: string,
-}
+  id: number;
+  label: string;
+  to: string;
+};
 
 export const countryData: CountryData[] = [
   {
@@ -50,4 +50,4 @@ export const countryData: CountryData[] = [
     label: '🇺🇸English',
     to: '',
   },
-]
+];

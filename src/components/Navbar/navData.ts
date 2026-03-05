@@ -33,7 +33,7 @@ export const menuItems: NavItem[] = [
     label: 'Dashboard',
     icon: IconShareplay,
     children: [
-      { label: 'CRM', to: '/dashboard/crm' },
+      { label: 'CRM', to: '/admin/' },
       { label: 'Analytics', to: '/dashboard/analytics' },
     ],
   },
@@ -51,7 +51,7 @@ export const menuItems: NavItem[] = [
 
   {
     id: 'request',
-    label: 'Request',
+    label: 'Requests',
     icon: IconSend,
     children: [
       { label: 'Buying', to: '/request/buying' },

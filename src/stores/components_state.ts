@@ -6,6 +6,7 @@ export const useComponentsState = defineStore('components', {
     showHoverSideBar: false,
     loading: false,
     mobileNavbarIsExpanded: false,
+    sidebar_main_route_label: '',
   }),
 
   actions: {
@@ -19,6 +20,10 @@ export const useComponentsState = defineStore('components', {
 
     toggleMobileNavbar(payload: boolean) {
       this.mobileNavbarIsExpanded = payload;
+    },
+
+    setMainLabel(payload: string) {
+      this.sidebar_main_route_label = payload;
     },
   },
 });

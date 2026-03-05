@@ -3,6 +3,7 @@ import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import AdminLayout from '@/layout/AdminLayout.vue';
 import LoginView from '@/views/login/LoginView.vue';
 import RegisterView from '@/views/register/RegisterView.vue';
+import CrmView from '@/views/CRM/CrmView.vue';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -16,9 +17,14 @@ const routes: RouteRecordRaw[] = [
     component: RegisterView,
   },
   {
-    path: '/admin',
+    path: '/admin/',
     component: AdminLayout,
     children: [
+      {
+        path: '',
+        name: 'CRM',
+        component: CrmView,
+      },
       // Add child routes here
     ],
   },

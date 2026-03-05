@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { userData } from '../../composables/userData'
+import { userData } from '../../composables/userData';
 import UserItems from './UserItems.vue';
-import UserDetails from './UserDetails.vue'
+import UserDetails from './UserDetails.vue';
 </script>
 
 <template>
@@ -9,8 +9,7 @@ import UserDetails from './UserDetails.vue'
     <UserDetails />
   </div>
 
-    <ul class="py-2">
-      <UserItems v-for="item in userData" :item="item" :key="item.label" />
-    </ul>
-
+  <ul class="py-2">
+    <UserItems v-for="item in userData" :item="item" :key="item.label" />
+  </ul>
 </template>

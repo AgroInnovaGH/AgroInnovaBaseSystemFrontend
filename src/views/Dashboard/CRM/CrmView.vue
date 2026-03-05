@@ -2,6 +2,7 @@
 import { IconPencil, IconSend, IconShoppingBag, IconTag } from '@tabler/icons-vue';
 import BreadCrumbsWrapper from '@/components/breadcrumbs/BreadCrumbsWrapper.vue';
 import ServiceCard from './ServiceCard.vue';
+import BarChart from '@/components/charts/BarChart.vue';
 </script>
 
 <template>
@@ -15,6 +16,8 @@ import ServiceCard from './ServiceCard.vue';
     <ServiceCard :icon="IconShoppingBag" :progress="43" progress-color="blue" label="Total Buys" />
     <ServiceCard :icon="IconPencil" :progress="50" progress-color="green" label="Inputs" />
   </div>
+
+  <BarChart />
 </template>
 
 <style scoped></style>

@@ -1,27 +1,25 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
-import { routes } from './route_data';
+import { menuItems } from '../Navbar/navData';
 
-const { path } = useRoute();
-
-const foundLink = routes.find((item) => item.to == path);
-
+const { name } = useRoute();
 const currentDate = new Date().toDateString();
+
+const mainLabel = menuItems.find((item) =>
+  item.children?.map((child) => child.label.toLowerCase() == name?.toString().toLowerCase()),
+);
 </script>
 
 <template>
-  <div class="min-h-16 shadow flex items-center justify-between px-8">
-    <div class="routes flex items-center">
-      <h3 class="text-[1.1rem] mr-2 font-bold" v-if="foundLink">
-        {{ foundLink.label }} <span class="opacity-10">|</span>
+  <div
+    class="min-h-16 border-b border-b-gray-200 bg-(--primary-color) flex items-center justify-between px-8"
+  >
+    <div class="routes flex gap-4 items-center">
+      <h3 class="text-[1.1rem] mr-2 font-bold capitalize">
+        {{ mainLabel?.id }} <span class="opacity-10">|</span>
       </h3>
-      <RouterLink
-        :class="`mr-2 text-[.9rem] ${foundLink?.to == link.to ? '' : 'opacity-30'}`"
-        v-for="(link, index) in routes"
-        :key="link.label"
-        :to="link.to"
-        >{{ link.label }} {{ routes.length > index + 1 ? '>' : '' }}
-      </RouterLink>
+      <RouterLink class="hover:text-blue-400" to="/admin/">Home </RouterLink> >
+      <p class="opacity-40 capitalize">{{ name || 'Route name does not match label' }}</p>
     </div>
 
     <div class="time_stamp border border-gray-400 rounded-full text-[.8rem] py-2 px-3">

@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div
-    :class="` bg-white nav_and_header_wrapper border-b border-b-gray-200 sticky top-0 left-0 z-50 w-full h-(--header-height) ${navIsExpanded ? 'expanded' : ''}`"
+    :class="` bg-white nav_and_header_wrapper border-b border-b-gray-200 fixed top-0 left-0 z-50 w-full max-h-(--header-height) ${navIsExpanded ? 'expanded' : ''}`"
   >
     <NavHeader />
     <nav class="header">

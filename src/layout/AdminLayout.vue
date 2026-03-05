@@ -7,7 +7,7 @@
 
     <div :class="`main ${navIsExpanded ? 'expanded' : ''}`">
       <div class="sidebar_space max-[992px]:hidden"></div>
-      <main>
+      <main class="mt-(--header_height) min-h-screen bg-(--alt-primary-color)">
         <router-view />
       </main>
     </div>

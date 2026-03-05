@@ -19,7 +19,6 @@ const { navIsExpanded, showHoverSideBar, mobileNavbarIsExpanded } = storeToRefs(
   </aside>
   <!-- for mobile screena only  , and  on mobile screen the nav is collpased  -->
   <div :class="`mobile_screen_sidebar ${mobileNavbarIsExpanded ? 'expanded' : ''}`">
-    <!-- <NavHeader @click="toggleMobileNavbar(false)" class="mobile_nav_header" /> -->
     <div class="mobile_nav_listitems_wrapper">
       <ListItems class="mobile_nav_listItems" />
       <div
@@ -36,6 +35,7 @@ const { navIsExpanded, showHoverSideBar, mobileNavbarIsExpanded } = storeToRefs(
   max-height: calc(100vh - var(--header-height));
   width: 80px;
   position: fixed;
+  top: var(--header_height);
   transition: width 200ms ease-in-out;
 
   &.expanded {
@@ -104,15 +104,23 @@ const { navIsExpanded, showHoverSideBar, mobileNavbarIsExpanded } = storeToRefs(
     left: 0;
     top: var(--header-height);
     overflow-y: scroll;
-    height: 100vh;
+    height: 90%;
     transition: 500ms;
-    scrollbar-width: none;
     border-right: 1px solid rgba(0 0 0 / 0.1);
     background-color: white;
+    scrollbar-width: none;
+    padding-bottom: 3rem;
 
     &.visible {
       --slide_to_view: 0;
     }
   }
+}
+
+.default_sidebar {
+  overflow-y: scroll;
+  height: 90%;
+  padding-bottom: 3rem;
+  scrollbar-width: none;
 }
 </style>

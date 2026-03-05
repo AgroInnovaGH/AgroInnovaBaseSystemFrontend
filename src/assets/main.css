@@ -8,6 +8,7 @@
 
 :root {
   --alt-primary-color: #f3f4f6;
+  --primary-color: white;
   --accent-color: #016630;
   --header_height: calc(var(--spacing) * 20);
 }

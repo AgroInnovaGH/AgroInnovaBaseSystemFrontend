@@ -3,7 +3,7 @@ import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import AdminLayout from '@/layout/AdminLayout.vue';
 import LoginView from '@/views/login/LoginView.vue';
 import RegisterView from '@/views/register/RegisterView.vue';
-import CrmView from '@/views/CRM/CrmView.vue';
+import CrmView from '@/views/Dashboard/CRM/CrmView.vue';
 
 const routes: RouteRecordRaw[] = [
   {

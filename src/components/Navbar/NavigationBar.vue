@@ -47,22 +47,6 @@ const { navIsExpanded, showHoverSideBar, mobileNavbarIsExpanded } = storeToRefs(
   }
 }
 
-.expanded_listitems {
-  @media (width > 992px) {
-    width: 80px;
-    overflow-x: hidden;
-    transition: width 200ms ease-in-out;
-
-    &.expanded {
-      width: 20%;
-    }
-
-    &.shrink {
-      width: 80px;
-    }
-  }
-}
-
 /* for mobile screens only */
 .mobile_screen_sidebar {
   display: none;

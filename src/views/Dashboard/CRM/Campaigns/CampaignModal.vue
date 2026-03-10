@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { toRefs } from 'vue';
 import type { CampaignFields } from './types';
+import { useCampaignsState } from '@/stores/campaigns_state';
 
 const props = defineProps<{
   data: CampaignFields;
@@ -9,11 +10,12 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   (event: 'close'): void;
-  (event: 'mark-completed', payload: CampaignFields): void;
-  (event: 'mark-cancelled', payload: CampaignFields): void;
 }>();
 
 const { day, month, personnel, time, title, date_color, description } = toRefs(props.data);
+
+const store = useCampaignsState();
+const { addToCancelledCampaigns, addToCompletedCampaigns } = store;
 </script>
 <template>
   <div class="modal_wrapper" @click.self="emit('close')">
@@ -59,14 +61,20 @@ const { day, month, personnel, time, title, date_color, description } = toRefs(p
         <button
           class="details_action details_action--complete"
           type="button"
-          @click="emit('mark-completed', props.data)"
+          @click="
+            addToCompletedCampaigns(props.data);
+            emit('close');
+          "
         >
           Mark as completed
         </button>
         <button
           class="details_action details_action--cancel"
           type="button"
-          @click="emit('mark-cancelled', props.data)"
+          @click="
+            addToCancelledCampaigns(props.data);
+            emit('close');
+          "
         >
           Mark as cancelled
         </button>

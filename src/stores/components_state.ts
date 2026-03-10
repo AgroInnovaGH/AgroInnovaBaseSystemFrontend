@@ -8,7 +8,6 @@ export const useComponentsState = defineStore('components', {
     mobileNavbarIsExpanded: false,
     sidebar_main_route_label: '',
     selectedFilter: 'weekly',
-    showCampaignModal: { value: false, id: 1 },
   }),
 
   actions: {
@@ -18,10 +17,6 @@ export const useComponentsState = defineStore('components', {
 
     toggleHoverNavbarState(payload: boolean) {
       this.showHoverSideBar = payload;
-    },
-
-    toggleCampaignModal(payload: { value: boolean; id: number }) {
-      this.showCampaignModal = payload;
     },
 
     toggleMobileNavbar(payload: boolean) {

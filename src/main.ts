@@ -12,9 +12,10 @@ const app = createApp(App);
 app.use(createPinia());
 
 app.use(Vue3Toastify, {
-  autoClose: 300,
+  autoClose: 600,
   position: toast.POSITION.TOP_RIGHT,
 });
+
 
 app.use(router);
 

@@ -3,6 +3,8 @@ import { ref } from 'vue';
 import { IconCancel } from '@tabler/icons-vue';
 import CampaignModal from './CampaignModal.vue';
 import type { CampaignFields } from './types';
+import { useCampaignsState } from '@/stores/campaigns_state';
+import { storeToRefs } from 'pinia';
 
 const selectedCampaign = ref<CampaignFields | null>(null);
 const isModalOpen = ref(false);
@@ -17,38 +19,8 @@ const closeCampaignModal = () => {
   selectedCampaign.value = null;
 };
 
-const campaigns: CampaignFields[] = [
-  {
-    day: '20',
-    month: 'DEC',
-    title: 'Tour to the Volta Region',
-    time: '11:30am - 12:30pm',
-    personnel: 'Mr Kizito',
-    date_color: 'blue',
-    description: 'Cancelled due to weather and logistics constraints.',
-    id: 1,
-  },
-  {
-    day: '30',
-    month: 'DEC',
-    title: 'Admin Design Concept',
-    time: '10:00am - 12:00pm',
-    date_color: 'orange',
-    personnel: 'Mr Edem',
-    description: 'Postponed after scope changes and resourcing shift.',
-    id: 2,
-  },
-  {
-    day: '17',
-    month: 'DEC',
-    title: 'Standup Team Meeting',
-    time: '8:00am - 9:00am',
-    date_color: 'green',
-    personnel: 'Mr Edward',
-    description: 'Team unavailable; rescheduled to next week.',
-    id: 3,
-  },
-];
+const store = useCampaignsState();
+const { cancelledCampaigns } = storeToRefs(store);
 </script>
 
 <template>
@@ -62,12 +34,12 @@ const campaigns: CampaignFields[] = [
       </button>
     </header>
 
-    <div v-if="campaigns.length == 0" class="text-center text-gray-600 text-[1rem]">
+    <div v-if="cancelledCampaigns.length == 0" class="text-center text-gray-600 text-[1rem]">
       No Cancelled Campaigns Yet
     </div>
     <div class="campaigns-card__list px-6 pb-4 space-y-3">
       <section
-        v-for="campaign in campaigns"
+        v-for="campaign in cancelledCampaigns"
         :key="`${campaign.day}-${campaign.title}`"
         class="campaigns-card__item flex hover:bg-gray-200 items-center gap-4 p-3 rounded-md border border-gray-200 cursor-pointer"
         @click="openCampaignModal(campaign)"

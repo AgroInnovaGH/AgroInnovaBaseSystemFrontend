@@ -7,6 +7,7 @@ export const useComponentsState = defineStore('components', {
     loading: false,
     mobileNavbarIsExpanded: false,
     sidebar_main_route_label: '',
+    selectedFilter: 'weekly',
   }),
 
   actions: {
@@ -24,6 +25,9 @@ export const useComponentsState = defineStore('components', {
 
     setMainLabel(payload: string) {
       this.sidebar_main_route_label = payload;
+    },
+    toggleFilter(payload: string) {
+      this.selectedFilter = payload;
     },
   },
 });

@@ -15,7 +15,7 @@ const clampedProgress = computed(() => Math.max(0, Math.min(100, props.progress)
 
 <template>
   <article
-    class="service-card h-fit p-4 rounded-[10px] bg-(--primary-color) border border-gray-200"
+    class="service-card h-fit p-4 rounded-(--radius) bg-(--primary-color) border border-gray-200"
   >
     <div class="service-card__header flex gap-4 items-center">
       <div class="service-card__icon-wrap">

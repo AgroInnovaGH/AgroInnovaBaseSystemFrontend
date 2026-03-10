@@ -40,7 +40,7 @@ const clampedProgress = computed(() => Math.max(0, Math.min(100, props.progress)
       :aria-valuenow="clampedProgress"
       aria-valuemin="0"
       aria-valuemax="100"
-    >
+     >
       <div
         class="service-card__fill h-full transition duration-200"
         :style="{ width: `${clampedProgress}%`, backgroundColor: `${progressColor || 'orange'}` }"

@@ -34,7 +34,7 @@ export const menuItems: NavItem[] = [
     icon: IconShareplay,
     children: [
       { label: 'CRM', to: '/admin/' },
-      { label: 'Analytics', to: '/dashboard/analytics' },
+      { label: 'Analytics', to: '/admin/analytics' },
     ],
   },
 

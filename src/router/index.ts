@@ -4,6 +4,7 @@ import AdminLayout from '@/layout/AdminLayout.vue';
 import LoginView from '@/views/login/LoginView.vue';
 import RegisterView from '@/views/register/RegisterView.vue';
 import CrmView from '@/views/Dashboard/CRM/CrmView.vue';
+import MyAnalytics from '@/views/Dashboard/analytics/MyAnalytics.vue';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -25,6 +26,11 @@ const routes: RouteRecordRaw[] = [
         name: 'CRM',
         component: CrmView,
       },
+      {
+        path: 'analytics',
+        name: 'Analytics',
+        component: MyAnalytics,
+      }
       // Add child routes here
     ],
   },

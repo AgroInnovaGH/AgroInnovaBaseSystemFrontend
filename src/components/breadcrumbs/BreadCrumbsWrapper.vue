@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 import { menuItems } from '../Navbar/navData';
+import FilterButton from './FilterButton.vue';
 
 const { name } = useRoute();
 const currentDate = new Date().toDateString();
@@ -22,8 +23,11 @@ const mainLabel = menuItems.find((item) =>
       <p class="opacity-40 capitalize">{{ name || 'Route name does not match label' }}</p>
     </div>
 
-    <div class="time_stamp border border-gray-400 rounded-full text-[.8rem] py-2 px-3">
-      {{ currentDate }}
+    <div class="flex items-center gap-4">
+      <div class="time_stamp border border-gray-400 rounded-(--radius) text-[.8rem] py-2 px-3">
+        {{ currentDate }}
+      </div>
+      <FilterButton />
     </div>
   </div>
 </template>

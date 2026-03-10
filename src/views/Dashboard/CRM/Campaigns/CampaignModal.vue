@@ -30,18 +30,26 @@ const { addToCancelledCampaigns, addToCompletedCampaigns } = store;
 
       <div class="details_body">
         <div
-          class="details_date"
-          :style="`background-color: hsla(from ${date_color || 'green'} h s l / .2 )`"
+          class="details_date_and_schedule"
+          style="display: flex; align-items: center; gap: 1.5rem"
         >
-          <span class="details_day" :style="`color: ${date_color || 'green'}`">{{ day }}</span>
-          <span class="details_month" :style="`color: ${date_color || 'green'}`">{{ month }}</span>
-        </div>
+          <div
+            class="details_date"
+            :style="`background-color: hsla(from ${date_color || 'green'} h s l / .2 )`"
+          >
+            <span class="details_day" :style="`color: ${date_color || 'green'}`">{{ day }}</span>
+            <span class="details_month" :style="`color: ${date_color || 'green'}`">{{
+              month
+            }}</span>
+          </div>
 
-        <dl class="details_grid">
           <div>
             <dt>Schedule</dt>
             <dd>{{ day }} {{ month }}</dd>
           </div>
+        </div>
+
+        <dl class="details_grid">
           <div>
             <dt>Time</dt>
             <dd>{{ time }}</dd>
@@ -87,10 +95,17 @@ const { addToCancelledCampaigns, addToCompletedCampaigns } = store;
 <style scoped>
 .modal_wrapper {
   background-color: rgba(0 0 0 / 0.2);
+  backdrop-filter: blur(2px);
   display: grid;
   position: fixed;
   inset: 0;
   place-items: center;
+  margin-top: 2rem;
+}
+
+.details_date_and_schedule {
+  display: flex;
+  justify-content: space-between;
 }
 
 .details_modal {
@@ -166,7 +181,8 @@ const { addToCancelledCampaigns, addToCompletedCampaigns } = store;
   gap: 0.8rem 1.2rem;
 }
 
-.details_grid dt {
+.details_grid dt,
+.details_date_and_schedule dt {
   color: #9ca3af;
   font-size: 0.75rem;
   text-transform: uppercase;

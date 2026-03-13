@@ -1,5 +1,5 @@
 <template>
-  <div class=" relative bg-gray-100 contain p-2 z-2">
+  <div class=" relative bg-gray-100 contain p-7 z-2">
     <div class="section relative border bg-white border-slate-200 top-5 p-5">
       <div class="flex flex-row  items-center justify-between h-10">
         <div class="tracking-wide">
@@ -38,20 +38,22 @@
           <DropDown v-for="item in chartData" :item="item" :key="item.label" />
         </div>
       </div>
-    </div>
+     </div>
       </header>
       <LineChart />
     </div>
+    <GoalsTab />
   </div>
 </template>
 
 <script setup lang="ts">
+import { chartData } from './chart/chartData';
+import { analyticsData } from './analyticsData';
 import { IconDotsVertical } from '@tabler/icons-vue';
 import AnalyticsCards from './AnalyticsCards.vue';
-import { analyticsData } from './analyticsData';
 import LineChart from './chart/LineChart.vue';
-import { chartData } from './chart/chartData';
 import DropDown from './chart/DropDown.vue';
+import GoalsTab from './goals/GoalsTab.vue';
 
 
 

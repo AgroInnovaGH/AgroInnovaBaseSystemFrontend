@@ -14,6 +14,7 @@ app.use(createPinia());
 app.use(Vue3Toastify, {
   autoClose: 600,
   position: toast.POSITION.TOP_RIGHT,
+   hideProgressBar : true
 });
 
 

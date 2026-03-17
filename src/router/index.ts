@@ -4,11 +4,12 @@ import AdminLayout from '@/layout/AdminLayout.vue';
 import LoginView from '@/views/login/LoginView.vue';
 import RegisterView from '@/views/register/RegisterView.vue';
 import CrmView from '@/views/Dashboard/CRM/CrmView.vue';
-import BuyingPage from '@/views/Requests/routes/BuyingPage.vue';
-import SellingPage from '@/views/Requests/routes/SellingPage.vue';
-import AkokoSikaPage from '@/views/Requests/routes/AkokoSikaPage.vue';
-import InputsPage from '@/views/Requests/routes/InputsPage.vue';
+import MyAnalytics from '@/views/Dashboard/analytics/MyAnalytics.vue';
 import CreateRequestPage from '@/views/Requests/routes/CreateRequestPage.vue';
+import InputsPage from '@/views/Requests/routes/InputsPage.vue';
+import AkokoSikaPage from '@/views/Requests/routes/AkokoSikaPage.vue';
+import SellingPage from '@/views/Requests/routes/SellingPage.vue';
+import BuyingPage from '@/views/Requests/routes/BuyingPage.vue';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -54,6 +55,11 @@ const routes: RouteRecordRaw[] = [
         path: 'create_request/:request',
         name: 'Create Request',
         component: CreateRequestPage,
+      },
+      {
+        path: 'analytics',
+        name: 'Analytics',
+        component: MyAnalytics,
       },
       // Add child routes here
     ],

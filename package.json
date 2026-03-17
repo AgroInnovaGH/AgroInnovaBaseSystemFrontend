@@ -19,6 +19,7 @@
     "@tabler/icons-vue": "^3.36.1",
     "@tailwindcss/vite": "^4.1.18",
     "chart.js": "^4.5.1",
+    "chartjs-plugin-crosshair": "^2.0.0",
     "pinia": "^3.0.4",
     "primevue": "^4.5.4",
     "tailwindcss": "^4.1.18",

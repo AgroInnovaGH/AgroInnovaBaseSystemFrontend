@@ -32,7 +32,7 @@ function selectFilter(value: string) {
       Filter
     </button>
 
-    <ul :class="`filter_dialog ${isFilterDialogActive ? 'active' : ''}`">
+    <ul :class="`filter_dialog z-10 ${isFilterDialogActive ? 'active' : ''}`">
       <li @click="selectFilter('weekly')">Weekly Sales</li>
       <li @click="selectFilter('monthly')">Monthly Sales</li>
       <li @click="selectFilter('annual')">Annual Sales</li>

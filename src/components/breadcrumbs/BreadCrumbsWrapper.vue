@@ -2,13 +2,17 @@
 import { useRoute } from 'vue-router';
 import { menuItems } from '../Navbar/navData';
 import FilterButton from './FilterButton.vue';
+import { computed } from 'vue';
 
-const { name } = useRoute();
+const route = useRoute();
+const name = route.name as string;
 const currentDate = new Date().toDateString();
 
-const mainLabel = menuItems.find((item) =>
-  item.children?.map((child) => child.label.toLowerCase() == name?.toString().toLowerCase()),
-);
+const parentItem = computed(() => {
+  return menuItems.find(
+    (item) => item.label === name || item.children?.some((child) => child.label === name),
+  );
+});
 </script>
 
 <template>
@@ -17,7 +21,7 @@ const mainLabel = menuItems.find((item) =>
   >
     <div class="routes flex gap-4 items-center">
       <h3 class="text-[1.1rem] mr-2 font-bold capitalize">
-        {{ mainLabel?.id }} <span class="opacity-10">|</span>
+        {{ parentItem?.label }} <span class="opacity-10">|</span>
       </h3>
       <RouterLink class="hover:text-blue-400" to="/admin/">Home </RouterLink> >
       <p class="opacity-40 capitalize">{{ name || 'Route name does not match label' }}</p>

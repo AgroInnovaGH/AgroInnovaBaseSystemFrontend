@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import { ref, toRefs } from 'vue'
-import type { NavItem } from './navData'
+import { ref, toRefs } from 'vue';
+import type { NavItem } from './navData';
 
-const openMenu = ref<string | null>(null) // 'users', 'content', 'settings', null, etc.
+const openMenu = ref<string | null>(null); // 'users', 'content', 'settings', null, etc.
 
 function toggleMenu(menu: string) {
   // If clicking the already open menu → close it
   if (openMenu.value === menu) {
-    openMenu.value = null
+    openMenu.value = null;
   } else {
     // Open the clicked one (automatically closes any previous one)
-    openMenu.value = menu
+    openMenu.value = menu;
   }
 }
 
 const props = defineProps<{
-  item: NavItem
-}>()
+  item: NavItem;
+}>();
 
-const { item } = toRefs(props)
-const { label, children, id } = item.value
+const { item } = toRefs(props);
+const { label, children, id } = item.value;
 </script>
 
 <template>

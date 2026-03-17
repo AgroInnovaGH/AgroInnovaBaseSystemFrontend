@@ -35,6 +35,7 @@ const { navIsExpanded, showHoverSideBar, mobileNavbarIsExpanded } = storeToRefs(
   max-height: calc(100vh - var(--header-height));
   width: 80px;
   position: fixed;
+  z-index: 100;
   top: var(--header_height);
   transition: width 200ms ease-in-out;
 

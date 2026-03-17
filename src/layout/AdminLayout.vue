@@ -30,9 +30,15 @@ const { navIsExpanded } = storeToRefs(store);
     display: grid;
     grid-template-columns: 80px 1fr;
     transition: grid-template-columns 500ms;
+    width: 100%;
+    max-width: 100vw;
 
     &.expanded {
       grid-template-columns: 20% 1fr;
+    }
+
+    main {
+      min-width: 0;
     }
   }
 }

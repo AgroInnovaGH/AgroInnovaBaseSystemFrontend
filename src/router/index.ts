@@ -10,6 +10,9 @@ import InputsPage from '@/views/Requests/routes/InputsPage.vue';
 import AkokoSikaPage from '@/views/Requests/routes/AkokoSikaPage.vue';
 import SellingPage from '@/views/Requests/routes/SellingPage.vue';
 import BuyingPage from '@/views/Requests/routes/BuyingPage.vue';
+import MyMarketing from '@/views/Reports/MyMarketing.vue';
+import MySales from '@/views/Reports/MySales.vue';
+import MyOperations from '@/views/Reports/MyOperations.vue';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -61,6 +64,21 @@ const routes: RouteRecordRaw[] = [
         name: 'Analytics',
         component: MyAnalytics,
       },
+      {
+        path: 'marketing',
+        name: 'Marketing',
+        component: MyMarketing
+      },
+      {
+        path: 'sales',
+        name: 'Sales',
+        component: MySales
+      },
+      {
+        path: 'operations',
+        name: 'Operations',
+        component: MyOperations
+      }
       // Add child routes here
     ],
   },

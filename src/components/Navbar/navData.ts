@@ -43,9 +43,9 @@ export const menuItems: NavItem[] = [
     label: 'Reports',
     icon: IconFileDescription,
     children: [
-      { label: 'Sales', to: '/reports/sales' },
-      { label: 'Marketing', to: '/reports/marketing' },
-      { label: 'Operations', to: '/reports/operations' },
+      { label: 'Sales', to: '/admin/sales' },
+      { label: 'Marketing', to: '/admin/marketing' },
+      { label: 'Operations', to: '/admin/operations' },
     ],
   },
 

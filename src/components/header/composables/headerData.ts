@@ -1,4 +1,4 @@
-import { IconBuildingWarehouse, IconFileDescription, IconHelp, IconMessage2, IconReceipt, IconRecycle, IconSend, IconSettings, IconTractor, IconTruckDelivery, IconUsers, IconWorld } from "@tabler/icons-vue"
+import { IconBuildingWarehouse, IconFileDescription, IconMessage2, IconRecycle, IconSend, IconTractor, IconTruckDelivery, IconUsers, IconWorld } from "@tabler/icons-vue"
 import type { Component } from "vue"
 
 type Children = {
@@ -25,15 +25,15 @@ export const headerData: HeaderData[] = [
     children: [
       {
         label: 'Sales',
-        to: '',
+        to: '/admin/sales',
       },
       {
         label: 'Marketing',
-        to: '',
+        to: '/admin/marketing',
       },
       {
         label: 'Operations',
-        to: '',
+        to: '/admin/operations',
       }
     ]
   },
@@ -123,4 +123,3 @@ export const headerData: HeaderData[] = [
   }
 ]
 
-  

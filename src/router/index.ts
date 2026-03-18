@@ -5,6 +5,9 @@ import LoginView from '@/views/login/LoginView.vue';
 import RegisterView from '@/views/register/RegisterView.vue';
 import CrmView from '@/views/Dashboard/CRM/CrmView.vue';
 import MyAnalytics from '@/views/Dashboard/analytics/MyAnalytics.vue';
+import MyMarketing from '@/views/Reports/MyMarketing.vue';
+import MySales from '@/views/Reports/MySales.vue';
+import MyOperations from '@/views/Reports/MyOperations.vue';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -30,6 +33,21 @@ const routes: RouteRecordRaw[] = [
         path: 'analytics',
         name: 'Analytics',
         component: MyAnalytics,
+      },
+      {
+        path: 'marketing',
+        name: 'Marketing',
+        component: MyMarketing
+      },
+      {
+        path: 'sales',
+        name: 'Sales',
+        component: MySales
+      },
+      {
+        path: 'operations',
+        name: 'Operations',
+        component: MyOperations
       }
       // Add child routes here
     ],

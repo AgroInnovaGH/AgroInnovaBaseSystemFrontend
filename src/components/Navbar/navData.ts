@@ -54,10 +54,10 @@ export const menuItems: NavItem[] = [
     label: 'Requests',
     icon: IconSend,
     children: [
-      { label: 'Buying', to: '/request/buying' },
-      { label: 'Selling', to: '/request/selling' },
-      { label: 'Akoko Sika', to: '/request/akoko-sika' },
-      { label: 'Inputs', to: '/request/inputs' },
+      { label: 'Buying', to: '/admin/requests/buying' },
+      { label: 'Selling', to: '/admin/requests/selling' },
+      { label: 'Akoko Sika', to: '/admin/requests/akoko_sika' },
+      { label: 'Inputs', to: '/admin/requests/inputs' },
     ],
   },
 

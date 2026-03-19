@@ -12,7 +12,7 @@ const { icon, label, subLabel } = item.value
 
 <template>
   <div >
-    <div class="bg-white rounded-xl shadow-md w-full border border-dashed border-gray-300 p-6 text-center flex flex-col items-center justify-center">
+    <div class="bg-white rounded-xl w-full border border-dashed border-gray-300 p-6 text-center flex flex-col items-center justify-center">
       <div class=" text-4xl mb-3">
         <component
          :is="icon"

@@ -21,7 +21,7 @@ const goalColors = computed(() => {
 </script>
 
 <template>
-  <div class="bg-white p-6 rounded-xl shadow">
+  <div class="bg-white p-6 rounded-xl border border-gray-200">
     <h2 class="text-xl font-bold mb-6 border-b border-gray-400 pb-3">
       In Progress
     </h2>
@@ -34,7 +34,7 @@ const goalColors = computed(() => {
       <div
         v-for="goal in goals"
         :key="goal.id"
-        class="flex flex-col items-center rounded-xl border border-dashed border-gray-200 shadow-sm hover:shadow-md transition-shadow hover:shadow-green-300 p-3"
+        class="flex flex-col items-center rounded-xl border border-dashed border-gray-300 p-3"
       >
         <div class="relative w-20 h-20 mb-4">
           <div class="absolute inset-1 rounded-full bg-gray-200"></div>

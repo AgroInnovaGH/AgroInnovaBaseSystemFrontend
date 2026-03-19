@@ -34,7 +34,7 @@ const { goals } = storeToRefs(store)
 
 <template>
   <MyModal :data="data" v-if="isActive" />
-  <div class="bg-white rounded-xl shadow-md border border-slate-100 p-5">
+  <div class="bg-white rounded-xl border border-gray-200 p-5">
     <h2 class="text-xl h-10 font-bold border-b border-gray-400 mb-4">Goals</h2>
 
     <form @submit.prevent class="flex mb-9">

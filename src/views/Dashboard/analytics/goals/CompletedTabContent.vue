@@ -9,7 +9,7 @@ store.goals.filter(goal => goal.id === 100 )
 </script>
 
 <template>
-  <div class="bg-white p-6 rounded-xl shadow p-5">
+  <div class="bg-white p-6 rounded-xl border border-gray-200 p-5">
     <h2 class="text-xl font-bold mb-4">Completed</h2>
 
     <div v-if="completedGoals.length === 0" class="text-gray-500">No completed goals yet</div>
